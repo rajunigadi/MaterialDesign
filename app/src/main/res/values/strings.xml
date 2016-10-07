@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="toolbar_scrolling_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+</resources>
