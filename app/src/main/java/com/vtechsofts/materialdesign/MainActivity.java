@@ -1,5 +1,7 @@
 package com.vtechsofts.materialdesign;
 
+import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private ProgressBar progressBar;
+    private FloatingActionButton fabAdd;
 
     private List<String> mUsers;
 
@@ -35,6 +38,14 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        fabAdd = (FloatingActionButton) findViewById(R.id.fab_add);
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, AddUserActivity.class);
+                startActivity(intent);
+            }
+        });
 
         linearLayoutManager = new LinearLayoutManager(getBaseContext());
         recyclerView.setLayoutManager(linearLayoutManager);
